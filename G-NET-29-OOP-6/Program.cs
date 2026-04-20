@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Numerics;
 using System.Threading.Channels;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -45,7 +47,21 @@ namespace G_NET_29_OOP_6
         //c)"Standby",Because the Toaster class inherits from Appliance but has not override the Status() method,So That it automatically uses the default implementation found in the parent class.
         #endregion
 
+        #region Q4:
+        //a)*Partial Class:allows you to split a single class definition across multiple files — the compiler merges them into one class.
+        //  *Organize large classes,Enable code generation,
+        //b)Partial method :is declared in one part of a partial class and optionally implemented in another part.
+        //  Deletion and Compilation: If the implementation is deleted, the code will still compile.
+        //    partial method is not implemented, the compiler simply removes the call to that method entirely during compilation.
 
+        //c)extension method lets you add new methods to an existing type without modifying its source code, without inheritance, and without recompiling.
+        //    1*static class
+        //    2*static method
+        //    3*this on 1st param
+
+        //d)    Log: result = 20
+        //      $20.00
+        #endregion
 
 
 
