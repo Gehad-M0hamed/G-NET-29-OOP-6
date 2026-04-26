@@ -63,18 +63,48 @@ namespace G_NET_29_OOP_6
         //      $20.00
         #endregion
 
-
-
-
-
-
-
-
-
+        #region Part02:
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
-        }
+            Cinema myCinema = new Cinema();
+                myCinema.Open();
+
+                // Ticket t = new Ticket(0, "Test", 100); 
+
+                var t1 = new StandardTicket(1, "Inception", 80, "A5");
+                var t2 = new VIPTicket(2, "Avengers", 200, 50);
+                var t3 = new IMAXTicket(3, "Dune", 130);
+
+                t1.BookTicket();
+                t2.BookTicket();
+                t3.BookTicket();
+
+                myCinema.AddTicket(t1);
+                myCinema.AddTicket(t2);
+                myCinema.AddTicket(t3);
+                myCinema.PrintAllTickets();
+
+                System.Console.WriteLine("\n--- Polymorphism: Final Price per Ticket ---");
+                Ticket[] ticketArray = { t1, t2, t3 };
+                foreach (var t in ticketArray)
+                {
+                    System.Console.WriteLine($"{t.GetType().Name} => Final Price: {t.CalculateFinalPrice():F2}");
+                }
+
+                System.Console.WriteLine("\n--- Extension Method: Receipt ---");
+                System.Console.WriteLine(t2.GenerateReceipt());
+
+                System.Console.WriteLine("\n--- Extension Method: Total Revenue ---");
+                double revenue = myCinema.GetTicketsList().GetTotalRevenue();
+                System.Console.WriteLine($"Total Revenue: {revenue:F2}");
+
+                myCinema.Close();
+            }
+        
+        #endregion
+
+      
+           
     }
 }
 
